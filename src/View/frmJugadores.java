@@ -58,7 +58,6 @@ public class frmJugadores extends javax.swing.JFrame {
         lblpeso = new javax.swing.JLabel();
         txtpeso = new javax.swing.JTextField();
         btnregistrarjugadores = new javax.swing.JButton();
-        btnmostrarjugadores = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTjugadores = new javax.swing.JTable();
         btnsalirjugadores = new javax.swing.JButton();
@@ -176,13 +175,6 @@ public class frmJugadores extends javax.swing.JFrame {
             }
         });
 
-        btnmostrarjugadores.setText("MOSTRAR");
-        btnmostrarjugadores.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnmostrarjugadoresActionPerformed(evt);
-            }
-        });
-
         jTjugadores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
@@ -216,11 +208,9 @@ public class frmJugadores extends javax.swing.JFrame {
                             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(182, 182, 182)
+                        .addGap(214, 214, 214)
                         .addComponent(btnregistrarjugadores)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnmostrarjugadores)
-                        .addGap(18, 18, 18)
+                        .addGap(37, 37, 37)
                         .addComponent(btnsalirjugadores, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -234,7 +224,6 @@ public class frmJugadores extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnregistrarjugadores)
-                    .addComponent(btnmostrarjugadores)
                     .addComponent(btnsalirjugadores))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -251,10 +240,6 @@ public class frmJugadores extends javax.swing.JFrame {
     private void btnregistrarjugadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnregistrarjugadoresActionPerformed
         agregar();
     }//GEN-LAST:event_btnregistrarjugadoresActionPerformed
-
-    private void btnmostrarjugadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmostrarjugadoresActionPerformed
-        mostrar();
-    }//GEN-LAST:event_btnmostrarjugadoresActionPerformed
     public void agregar() {
         try {
             int id = 0;
@@ -285,6 +270,8 @@ public class frmJugadores extends javax.swing.JFrame {
             txtpocision.setText("");
             txtestatura.setText("");
             txtpeso.setText("");
+            
+            mostrar();
             }
             
         } catch (Exception e) {
@@ -314,7 +301,6 @@ public class frmJugadores extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnmostrarjugadores;
     private javax.swing.JButton btnregistrarjugadores;
     private javax.swing.JButton btnsalirjugadores;
     private javax.swing.JPanel jPanel1;
