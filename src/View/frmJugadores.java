@@ -241,42 +241,59 @@ public class frmJugadores extends javax.swing.JFrame {
         agregar();
     }//GEN-LAST:event_btnregistrarjugadoresActionPerformed
     public void agregar() {
-        try {
-            int id = 0;
-            double sueldo;
-            double peso;
-            double estatura;
-            String nombre = null;
-            String apellidos;
-            String pocision;
-            Jugador juga;
-            if (txtcedulajugadores.getText().equals("") || (txtnombrejugadores.getText().equals("")) || (txtapellidojugadores.getText().equals("")) || (txtsueldojugadores.getText().equals("")) || (txtpocision.getText().equals("")) || (txtestatura.getText().equals("")) || (txtpeso.getText().equals(""))) {
-                JOptionPane.showMessageDialog(null, "Llene el campo vacio");
-            } else {
+        
+        int id = 0;
+        double sueldo=0;
+        double peso=0;
+        double estatura=0;
+        String nombre = null;
+        String apellidos;
+        String pocision;
+        Jugador juga;
+        if (txtcedulajugadores.getText().equals("") || (txtnombrejugadores.getText().equals("")) || (txtapellidojugadores.getText().equals("")) || (txtsueldojugadores.getText().equals("")) || (txtpocision.getText().equals("")) || (txtestatura.getText().equals("")) || (txtpeso.getText().equals(""))) {
+            JOptionPane.showMessageDialog(null, "Llene el campo vacio");
+        } else {
+            try {
                 id = Integer.parseInt(txtcedulajugadores.getText());
-                nombre = txtnombrejugadores.getText();
-                apellidos = txtapellidojugadores.getText();
-                sueldo = Double.parseDouble(txtsueldojugadores.getText());
-                pocision = txtpocision.getText();
-                estatura = Double.parseDouble(txtestatura.getText());
-                peso = Double.parseDouble(txtpeso.getText());
-                Jugador jug = new Jugador(pocision, estatura, peso, id, nombre, apellidos, sueldo);
-                jugadores.add(jug);
-                JOptionPane.showMessageDialog(null, "Datos Agregados Correctamente");
-                txtcedulajugadores.setText("");
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Solo se aceptan datos numericos, verifique el campo Cedula");
+                return;
+            }
+            nombre = txtnombrejugadores.getText();
+            apellidos = txtapellidojugadores.getText();
+            try {
+            sueldo = Double.parseDouble(txtsueldojugadores.getText());
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Solo se aceptan datos numericos, verifique el campo Sueldo");
+                return;
+            }
+            pocision = txtpocision.getText();
+            try {
+            estatura = Double.parseDouble(txtestatura.getText());
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Solo se aceptan datos numericos, verifique el campo Estatura");
+                return;
+            }
+            try {
+            peso = Double.parseDouble(txtpeso.getText());
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Solo se aceptan datos numericos, verifique el campo Peso");
+                return;
+            }
+            Jugador jug = new Jugador(pocision, estatura, peso, id, nombre, apellidos, sueldo);
+            jugadores.add(jug);
+            JOptionPane.showMessageDialog(null, "Datos Agregados Correctamente");
+            txtcedulajugadores.setText("");
             txtnombrejugadores.setText("");
             txtapellidojugadores.setText("");
             txtsueldojugadores.setText("");
             txtpocision.setText("");
             txtestatura.setText("");
             txtpeso.setText("");
-            
+
             mostrar();
-            }
-            
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error en el programa, verifique los datos");
         }
+
     }
 
     public void mostrar() {
