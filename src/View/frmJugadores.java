@@ -278,7 +278,15 @@ public class frmJugadores extends javax.swing.JFrame {
                 Jugador jug = new Jugador(pocision, estatura, peso, id, nombre, apellidos, sueldo);
                 jugadores.add(jug);
                 JOptionPane.showMessageDialog(null, "Datos Agregados Correctamente");
+                txtcedulajugadores.setText("");
+            txtnombrejugadores.setText("");
+            txtapellidojugadores.setText("");
+            txtsueldojugadores.setText("");
+            txtpocision.setText("");
+            txtestatura.setText("");
+            txtpeso.setText("");
             }
+            
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error en el programa, verifique los datos");
         }
