@@ -14,7 +14,14 @@ import javax.swing.ImageIcon;
  *
  * @author aldai
  */
+
+
 public class frmPrincipal extends javax.swing.JFrame {
+    
+     frmValoracion va = new frmValoracion();
+    frmAuxiliares au = new frmAuxiliares();
+    frmEntrenadores ent = new frmEntrenadores();
+    frmJugadores jug = new frmJugadores();
 
     /**
      * Creates new form frmPrincipal
@@ -138,22 +145,22 @@ public class frmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jmiSalirActionPerformed
 
     private void jmiJugadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiJugadoresActionPerformed
-       frmJugadores jug = new frmJugadores();
+       
        jug.setVisible(true);
     }//GEN-LAST:event_jmiJugadoresActionPerformed
 
     private void jmiEntrenadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiEntrenadoresActionPerformed
-        frmEntrenadores ent = new frmEntrenadores();
+        
         ent.setVisible(true);
     }//GEN-LAST:event_jmiEntrenadoresActionPerformed
 
     private void jmiAuxiliaresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAuxiliaresActionPerformed
-       frmAuxiliares au = new frmAuxiliares();
+      
        au.setVisible(true);
     }//GEN-LAST:event_jmiAuxiliaresActionPerformed
 
     private void jmiValoracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiValoracionActionPerformed
-       frmValoracion va = new frmValoracion();
+      
        va.setVisible(true);
     }//GEN-LAST:event_jmiValoracionActionPerformed
 
