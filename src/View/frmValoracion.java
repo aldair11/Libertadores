@@ -1,9 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package View;
+
+import Model.Valoracion;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -14,8 +18,18 @@ public class frmValoracion extends javax.swing.JFrame {
     /**
      * Creates new form frmValoracion
      */
+    ArrayList<Valoracion> valoraciones;
     public frmValoracion() {
+        this.valoraciones = new ArrayList<>();
         initComponents();
+        txtfecha.setEnabled(false);
+        txtfecha.setText(fechaActual());
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
+        setIconImage(new ImageIcon(getClass().getResource("../Image/nantes.png")).getImage());
+        
+        
+        
     }
 
     /**
@@ -27,24 +41,245 @@ public class frmValoracion extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jPanel1 = new javax.swing.JPanel();
+        lblnombrevaloracion = new javax.swing.JLabel();
+        txtNombrevaloracion = new javax.swing.JTextField();
+        lblobsmedica = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txaobsmedica = new javax.swing.JTextArea();
+        lblobsfisica = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txaobsfisica = new javax.swing.JTextArea();
+        lblfecha = new javax.swing.JLabel();
+        txtfecha = new javax.swing.JTextField();
+        btnregistrarvaloracion = new javax.swing.JButton();
+        btnsalirvaloracion = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTValoraciones = new javax.swing.JTable();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setTitle("Valoración Médica");
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Valoración"));
+
+        lblnombrevaloracion.setText("Nombre del Jugador:");
+
+        lblobsmedica.setText("Observación Médica:");
+
+        txaobsmedica.setColumns(20);
+        txaobsmedica.setRows(5);
+        jScrollPane1.setViewportView(txaobsmedica);
+
+        lblobsfisica.setText("Observación Física:");
+
+        txaobsfisica.setColumns(20);
+        txaobsfisica.setRows(5);
+        jScrollPane2.setViewportView(txaobsfisica);
+
+        lblfecha.setText("Fecha:");
+
+        txtfecha.setText("dd/MM/YYYY");
+        txtfecha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtfechaActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lblnombrevaloracion)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtNombrevaloracion, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblfecha)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtfecha))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblobsmedica)
+                            .addComponent(lblobsfisica))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(jScrollPane2))))
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblnombrevaloracion)
+                    .addComponent(txtNombrevaloracion, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblfecha)
+                    .addComponent(txtfecha, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(22, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addComponent(lblobsmedica)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblobsfisica)
+                        .addGap(53, 53, 53))))
+        );
+
+        btnregistrarvaloracion.setText("REGISTRAR");
+        btnregistrarvaloracion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnregistrarvaloracionActionPerformed(evt);
+            }
+        });
+
+        btnsalirvaloracion.setText("SALIR");
+        btnsalirvaloracion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsalirvaloracionActionPerformed(evt);
+            }
+        });
+
+        jTValoraciones.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Fecha", "Nombre Jugador", "Obs Médica", "Obs Física"
+            }
+        ));
+        jTValoraciones.setRowHeight(30);
+        jScrollPane3.setViewportView(jTValoraciones);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(237, 237, 237)
+                .addComponent(btnregistrarvaloracion)
+                .addGap(49, 49, 49)
+                .addComponent(btnsalirvaloracion, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnregistrarvaloracion)
+                    .addComponent(btnsalirvaloracion))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
- 
+    private void btnsalirvaloracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalirvaloracionActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnsalirvaloracionActionPerformed
+
+    private void txtfechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfechaActionPerformed
+        
+    }//GEN-LAST:event_txtfechaActionPerformed
+
+    private void btnregistrarvaloracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnregistrarvaloracionActionPerformed
+        agregarValoracion();
+    }//GEN-LAST:event_btnregistrarvaloracionActionPerformed
+
+    public static String fechaActual(){
+    
+    Date fecha=new Date();
+    SimpleDateFormat formatoFecha=new SimpleDateFormat("dd/MM/YYYY");
+    
+    return formatoFecha.format(fecha);
+    
+}
+    public void agregarValoracion() {
+
+        String fecha = null;
+        String nombre = null;
+        String medica = null;
+        String fisica = null;
+        Valoracion val;
+        if (txtNombrevaloracion.getText().equals("") || (txtfecha.getText().equals("")) || (txaobsmedica.getText().equals("")) || (txaobsfisica.getText().equals(""))) {
+            JOptionPane.showMessageDialog(null, "Llene el campo vacio");
+        } else {
+           
+            fecha = txtfecha.getText();
+            nombre = txtNombrevaloracion.getText();
+            medica = txaobsmedica.getText();
+            fisica = txaobsfisica.getText();
+            
+            Valoracion valo = new Valoracion(fecha, nombre, medica, fisica);
+            valoraciones.add(valo);
+
+            JOptionPane.showMessageDialog(null, "Datos Agregados Correctamente");
+            txtNombrevaloracion.setText("");
+            txaobsmedica.setText("");
+            txaobsfisica.setText("");
+
+            mostrarAValoracion();
+
+        }
+    }
+
+    public void mostrarAValoracion() {
+        String matriz[][] = new String[valoraciones.size()][4];
+
+        for (int i = 0; i < valoraciones.size(); i++) {
+            matriz[i][0] = valoraciones.get(i).getNombreJugador();
+            matriz[i][1] = valoraciones.get(i).getFecha();
+            matriz[i][2] = valoraciones.get(i).getObsmedica();
+            matriz[i][3] = valoraciones.get(i).getObsfisica();
+
+        }
+        jTValoraciones.setModel(new javax.swing.table.DefaultTableModel(
+                matriz,
+                new String[]{
+                    "Nombre Jugador", "Fecha", "Obs Médica", "Obs Física"
+                }
+        ));
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnregistrarvaloracion;
+    private javax.swing.JButton btnsalirvaloracion;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTable jTValoraciones;
+    private javax.swing.JLabel lblfecha;
+    private javax.swing.JLabel lblnombrevaloracion;
+    private javax.swing.JLabel lblobsfisica;
+    private javax.swing.JLabel lblobsmedica;
+    private javax.swing.JTextArea txaobsfisica;
+    private javax.swing.JTextArea txaobsmedica;
+    private javax.swing.JTextField txtNombrevaloracion;
+    private javax.swing.JTextField txtfecha;
     // End of variables declaration//GEN-END:variables
 }

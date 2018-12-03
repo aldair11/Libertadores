@@ -95,6 +95,11 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         jmiValoracion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/doctor.png"))); // NOI18N
         jmiValoracion.setText("Registrar Valoración");
+        jmiValoracion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiValoracionActionPerformed(evt);
+            }
+        });
         jmvaloracion.add(jmiValoracion);
 
         jMenuBar2.add(jmvaloracion);
@@ -146,6 +151,11 @@ public class frmPrincipal extends javax.swing.JFrame {
        frmAuxiliares au = new frmAuxiliares();
        au.setVisible(true);
     }//GEN-LAST:event_jmiAuxiliaresActionPerformed
+
+    private void jmiValoracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiValoracionActionPerformed
+       frmValoracion va = new frmValoracion();
+       va.setVisible(true);
+    }//GEN-LAST:event_jmiValoracionActionPerformed
 
     /**
      * @param args the command line arguments
