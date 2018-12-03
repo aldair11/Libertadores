@@ -256,24 +256,32 @@ public class frmJugadores extends javax.swing.JFrame {
         mostrar();
     }//GEN-LAST:event_btnmostrarjugadoresActionPerformed
     public void agregar() {
-        int id;
-        double sueldo;
-        double peso;
-        double estatura;
-        String nombre;
-        String apellidos;
-        String pocision;
-        Jugadores juga;
-        id = Integer.parseInt(txtcedulajugadores.getText());
-        nombre = txtnombrejugadores.getText();
-        apellidos = txtapellidojugadores.getText();
-        sueldo = Double.parseDouble(txtsueldojugadores.getText());
-        pocision = txtpocision.getText();
-        estatura = Double.parseDouble(txtestatura.getText());
-        peso = Double.parseDouble(txtpeso.getText());
-        Jugadores jug = new Jugadores(pocision, estatura, peso, id, nombre, apellidos, sueldo);
-        jugador.add(jug);
-        JOptionPane.showMessageDialog(null, "Datos Agregados Correctamente");
+        try {
+            int id = 0;
+            double sueldo;
+            double peso;
+            double estatura;
+            String nombre = null;
+            String apellidos;
+            String pocision;
+            Jugadores juga;
+            if (txtcedulajugadores.getText().equals("") || (txtnombrejugadores.getText().equals("")) || (txtapellidojugadores.getText().equals("")) || (txtsueldojugadores.getText().equals("")) || (txtpocision.getText().equals("")) || (txtestatura.getText().equals("")) || (txtpeso.getText().equals(""))) {
+                JOptionPane.showMessageDialog(null, "Llene el campo vacio");
+            } else {
+                id = Integer.parseInt(txtcedulajugadores.getText());
+                nombre = txtnombrejugadores.getText();
+                apellidos = txtapellidojugadores.getText();
+                sueldo = Double.parseDouble(txtsueldojugadores.getText());
+                pocision = txtpocision.getText();
+                estatura = Double.parseDouble(txtestatura.getText());
+                peso = Double.parseDouble(txtpeso.getText());
+                Jugadores jug = new Jugadores(pocision, estatura, peso, id, nombre, apellidos, sueldo);
+                jugador.add(jug);
+                JOptionPane.showMessageDialog(null, "Datos Agregados Correctamente");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error en el programa, verifique los datos");
+        }
     }
 
     public void mostrar() {
