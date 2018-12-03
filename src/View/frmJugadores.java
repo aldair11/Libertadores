@@ -177,6 +177,11 @@ public class frmJugadores extends javax.swing.JFrame {
         });
 
         btnmostrarjugadores.setText("MOSTRAR");
+        btnmostrarjugadores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnmostrarjugadoresActionPerformed(evt);
+            }
+        });
 
         jTjugadores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -246,6 +251,10 @@ public class frmJugadores extends javax.swing.JFrame {
     private void btnregistrarjugadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnregistrarjugadoresActionPerformed
         agregar();
     }//GEN-LAST:event_btnregistrarjugadoresActionPerformed
+
+    private void btnmostrarjugadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmostrarjugadoresActionPerformed
+        mostrar();
+    }//GEN-LAST:event_btnmostrarjugadoresActionPerformed
     public void agregar() {
         int id;
         double sueldo;
@@ -271,13 +280,13 @@ public class frmJugadores extends javax.swing.JFrame {
         String matriz[][] = new String[jugador.size()][7];
 
         for (int i = 0; i < jugador.size(); i++) {
-            matriz[i][0] = jugador.get(i).getId();
+            matriz[i][0] = Integer.toString(jugador.get(i).getId());
             matriz[i][1] = jugador.get(i).getNombre();
             matriz[i][2] = jugador.get(i).getApellidos();
-            matriz[i][3] = jugador.get(i).getSueldo();
+            matriz[i][3] = Double.toString(jugador.get(i).getSueldo());
             matriz[i][4] = jugador.get(i).getPocision();
-            matriz[i][5] = jugador.get(i).getEstatura();
-            matriz[i][6] = jugador.get(i).getPeso();
+            matriz[i][5] = Double.toString(jugador.get(i).getEstatura());
+            matriz[i][6] = Double.toString(jugador.get(i).getPeso());
         }
         jTjugadores.setModel(new javax.swing.table.DefaultTableModel(
                 matriz,
