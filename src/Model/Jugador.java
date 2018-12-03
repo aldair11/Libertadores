@@ -1,12 +1,12 @@
 
 package Model;
 
-public class Jugadores extends Persona{
+public class Jugador extends Persona{
     private String pocision;
     private double estatura;
     private double peso;
 
-    public Jugadores(String pocision, double estatura, double peso, int id, String nombre, String apellidos, double sueldo) {
+    public Jugador(String pocision, double estatura, double peso, int id, String nombre, String apellidos, double sueldo) {
         super(id, nombre, apellidos, sueldo);
         this.pocision = pocision;
         this.estatura = estatura;

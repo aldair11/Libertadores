@@ -5,7 +5,7 @@
  */
 package View;
 
-import Model.Jugadores;
+import Model.Jugador;
 import Model.Persona;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
@@ -20,10 +20,10 @@ public class frmJugadores extends javax.swing.JFrame {
     /**
      * Creates new form frmJugadores
      */
-    ArrayList<Jugadores> jugador;
+    ArrayList<Jugador> jugadores;
 
     public frmJugadores() {
-        this.jugador = new ArrayList<>();
+        this.jugadores = new ArrayList<>();
         initComponents();
         this.setResizable(false);
         this.setLocationRelativeTo(null);
@@ -264,7 +264,7 @@ public class frmJugadores extends javax.swing.JFrame {
             String nombre = null;
             String apellidos;
             String pocision;
-            Jugadores juga;
+            Jugador juga;
             if (txtcedulajugadores.getText().equals("") || (txtnombrejugadores.getText().equals("")) || (txtapellidojugadores.getText().equals("")) || (txtsueldojugadores.getText().equals("")) || (txtpocision.getText().equals("")) || (txtestatura.getText().equals("")) || (txtpeso.getText().equals(""))) {
                 JOptionPane.showMessageDialog(null, "Llene el campo vacio");
             } else {
@@ -275,8 +275,8 @@ public class frmJugadores extends javax.swing.JFrame {
                 pocision = txtpocision.getText();
                 estatura = Double.parseDouble(txtestatura.getText());
                 peso = Double.parseDouble(txtpeso.getText());
-                Jugadores jug = new Jugadores(pocision, estatura, peso, id, nombre, apellidos, sueldo);
-                jugador.add(jug);
+                Jugador jug = new Jugador(pocision, estatura, peso, id, nombre, apellidos, sueldo);
+                jugadores.add(jug);
                 JOptionPane.showMessageDialog(null, "Datos Agregados Correctamente");
             }
         } catch (Exception e) {
@@ -285,16 +285,16 @@ public class frmJugadores extends javax.swing.JFrame {
     }
 
     public void mostrar() {
-        String matriz[][] = new String[jugador.size()][7];
+        String matriz[][] = new String[jugadores.size()][7];
 
-        for (int i = 0; i < jugador.size(); i++) {
-            matriz[i][0] = Integer.toString(jugador.get(i).getId());
-            matriz[i][1] = jugador.get(i).getNombre();
-            matriz[i][2] = jugador.get(i).getApellidos();
-            matriz[i][3] = Double.toString(jugador.get(i).getSueldo());
-            matriz[i][4] = jugador.get(i).getPocision();
-            matriz[i][5] = Double.toString(jugador.get(i).getEstatura());
-            matriz[i][6] = Double.toString(jugador.get(i).getPeso());
+        for (int i = 0; i < jugadores.size(); i++) {
+            matriz[i][0] = Integer.toString(jugadores.get(i).getId());
+            matriz[i][1] = jugadores.get(i).getNombre();
+            matriz[i][2] = jugadores.get(i).getApellidos();
+            matriz[i][3] = Double.toString(jugadores.get(i).getSueldo());
+            matriz[i][4] = jugadores.get(i).getPocision();
+            matriz[i][5] = Double.toString(jugadores.get(i).getEstatura());
+            matriz[i][6] = Double.toString(jugadores.get(i).getPeso());
         }
         jTjugadores.setModel(new javax.swing.table.DefaultTableModel(
                 matriz,
