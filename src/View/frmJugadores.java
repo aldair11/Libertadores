@@ -7,6 +7,11 @@ package View;
 
 import Model.Jugador;
 import Model.Persona;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -241,11 +246,11 @@ public class frmJugadores extends javax.swing.JFrame {
         agregar();
     }//GEN-LAST:event_btnregistrarjugadoresActionPerformed
     public void agregar() {
-        
+
         int id = 0;
-        double sueldo=0;
-        double peso=0;
-        double estatura=0;
+        double sueldo = 0;
+        double peso = 0;
+        double estatura = 0;
         String nombre = null;
         String apellidos;
         String pocision;
@@ -262,26 +267,27 @@ public class frmJugadores extends javax.swing.JFrame {
             nombre = txtnombrejugadores.getText();
             apellidos = txtapellidojugadores.getText();
             try {
-            sueldo = Double.parseDouble(txtsueldojugadores.getText());
+                sueldo = Double.parseDouble(txtsueldojugadores.getText());
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Solo se aceptan datos numericos, verifique el campo Sueldo");
                 return;
             }
             pocision = txtpocision.getText();
             try {
-            estatura = Double.parseDouble(txtestatura.getText());
+                estatura = Double.parseDouble(txtestatura.getText());
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Solo se aceptan datos numericos, verifique el campo Estatura");
                 return;
             }
             try {
-            peso = Double.parseDouble(txtpeso.getText());
+                peso = Double.parseDouble(txtpeso.getText());
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Solo se aceptan datos numericos, verifique el campo Peso");
                 return;
             }
             Jugador jug = new Jugador(pocision, estatura, peso, id, nombre, apellidos, sueldo);
             jugadores.add(jug);
+
             JOptionPane.showMessageDialog(null, "Datos Agregados Correctamente");
             txtcedulajugadores.setText("");
             txtnombrejugadores.setText("");
@@ -292,6 +298,7 @@ public class frmJugadores extends javax.swing.JFrame {
             txtpeso.setText("");
 
             mostrar();
+
         }
 
     }

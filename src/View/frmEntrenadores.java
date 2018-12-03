@@ -5,6 +5,11 @@
  */
 package View;
 
+import Model.Entrenador;
+import java.util.ArrayList;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author aldai
@@ -14,8 +19,14 @@ public class frmEntrenadores extends javax.swing.JFrame {
     /**
      * Creates new form frmEntrenadores
      */
+    ArrayList<Entrenador> entrenadores;
+
     public frmEntrenadores() {
+        this.entrenadores = new ArrayList<>();
         initComponents();
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
+        setIconImage(new ImageIcon(getClass().getResource("../Image/nantes.png")).getImage());
     }
 
     /**
@@ -27,24 +38,234 @@ public class frmEntrenadores extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jPanel1 = new javax.swing.JPanel();
+        lblcedulaentrenadores = new javax.swing.JLabel();
+        txtcedulaentrenadores = new javax.swing.JTextField();
+        lblnombreentrenadores = new javax.swing.JLabel();
+        txtnombreentrenadores = new javax.swing.JTextField();
+        lblapellidoentrenadores = new javax.swing.JLabel();
+        txtapellidoentrenadores = new javax.swing.JTextField();
+        lblsueldoentrenadores = new javax.swing.JLabel();
+        txtsueldoentrenadores = new javax.swing.JTextField();
+        lbltipo = new javax.swing.JLabel();
+        cmbtipo = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTEntrenadores = new javax.swing.JTable();
+        btnregistrarentrenadores = new javax.swing.JButton();
+        btnsalirentrenadores = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setTitle("Registro de Entrenadores");
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos Basicos"));
+
+        lblcedulaentrenadores.setText("Cedula:");
+
+        lblnombreentrenadores.setText("Nombre:");
+
+        lblapellidoentrenadores.setText("Apellido:");
+
+        lblsueldoentrenadores.setText("Sueldo:");
+
+        lbltipo.setText("Tipo:");
+
+        cmbtipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Director Técnico", "Asistente", "Entrenador de Arqueros", "Preparador Físico" }));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(75, 75, 75)
+                .addComponent(lblcedulaentrenadores)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lblsueldoentrenadores)
+                        .addGap(35, 35, 35)
+                        .addComponent(txtsueldoentrenadores, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(37, 37, 37)
+                        .addComponent(lbltipo)
+                        .addGap(18, 18, 18)
+                        .addComponent(cmbtipo, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(txtcedulaentrenadores, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblnombreentrenadores)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtnombreentrenadores, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                        .addComponent(lblapellidoentrenadores)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtapellidoentrenadores, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(94, 94, 94))))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblcedulaentrenadores)
+                    .addComponent(txtcedulaentrenadores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblnombreentrenadores)
+                    .addComponent(txtnombreentrenadores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblapellidoentrenadores)
+                    .addComponent(txtapellidoentrenadores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblsueldoentrenadores)
+                    .addComponent(txtsueldoentrenadores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbltipo)
+                    .addComponent(cmbtipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26))
+        );
+
+        jTEntrenadores.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Cedula", "Nombre", "Apellido", "Sueldo", "Tipo"
+            }
+        ));
+        jScrollPane1.setViewportView(jTEntrenadores);
+
+        btnregistrarentrenadores.setText("REGISTRAR");
+        btnregistrarentrenadores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnregistrarentrenadoresActionPerformed(evt);
+            }
+        });
+
+        btnsalirentrenadores.setText("SALIR");
+        btnsalirentrenadores.setToolTipText("");
+        btnsalirentrenadores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsalirentrenadoresActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1))
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(211, 211, 211)
+                .addComponent(btnregistrarentrenadores)
+                .addGap(54, 54, 54)
+                .addComponent(btnsalirentrenadores)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnregistrarentrenadores)
+                    .addComponent(btnsalirentrenadores))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-   
+    private void btnsalirentrenadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalirentrenadoresActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnsalirentrenadoresActionPerformed
+
+    private void btnregistrarentrenadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnregistrarentrenadoresActionPerformed
+        agregarEntrenador();
+    }//GEN-LAST:event_btnregistrarentrenadoresActionPerformed
+    public void agregarEntrenador() {
+
+        int id = 0;
+        double sueldo = 0;
+        String nombre = null;
+        String apellidos = null;
+        String tipo = null;
+        Entrenador entre;
+        if (txtcedulaentrenadores.getText().equals("") || (txtnombreentrenadores.getText().equals("")) || (txtapellidoentrenadores.getText().equals("")) || (txtsueldoentrenadores.getText().equals(""))) {
+            JOptionPane.showMessageDialog(null, "Llene el campo vacio");
+        } else {
+            try {
+                id = Integer.parseInt(txtcedulaentrenadores.getText());
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Solo se aceptan datos numericos, verifique el campo Cedula");
+                return;
+            }
+            nombre = txtnombreentrenadores.getText();
+            apellidos = txtapellidoentrenadores.getText();
+            try {
+                sueldo = Double.parseDouble(txtsueldoentrenadores.getText());
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Solo se aceptan datos numericos, verifique el campo Sueldo");
+                return;
+            }
+            tipo = (String) cmbtipo.getSelectedItem();
+
+            Entrenador entr = new Entrenador(tipo, id, nombre, apellidos, sueldo);
+            entrenadores.add(entr);
+
+            JOptionPane.showMessageDialog(null, "Datos Agregados Correctamente");
+            txtcedulaentrenadores.setText("");
+            txtnombreentrenadores.setText("");
+            txtapellidoentrenadores.setText("");
+            txtsueldoentrenadores.setText("");
+
+            mostrarEntrenadores();
+
+        }
+    }
+
+    public void mostrarEntrenadores() {
+        String matriz[][] = new String[entrenadores.size()][5];
+
+        for (int i = 0; i < entrenadores.size(); i++) {
+            matriz[i][0] = Integer.toString(entrenadores.get(i).getId());
+            matriz[i][1] = entrenadores.get(i).getNombre();
+            matriz[i][2] = entrenadores.get(i).getApellidos();
+            matriz[i][3] = Double.toString(entrenadores.get(i).getSueldo());
+            matriz[i][4] = entrenadores.get(i).getTipo();
+
+        }
+        jTEntrenadores.setModel(new javax.swing.table.DefaultTableModel(
+                matriz,
+                new String[]{
+                    "Cedula", "Nombre", "Apellido", "Sueldo", "Tipo"
+                }
+        ));
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnregistrarentrenadores;
+    private javax.swing.JButton btnsalirentrenadores;
+    private javax.swing.JComboBox<String> cmbtipo;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTEntrenadores;
+    private javax.swing.JLabel lblapellidoentrenadores;
+    private javax.swing.JLabel lblcedulaentrenadores;
+    private javax.swing.JLabel lblnombreentrenadores;
+    private javax.swing.JLabel lblsueldoentrenadores;
+    private javax.swing.JLabel lbltipo;
+    private javax.swing.JTextField txtapellidoentrenadores;
+    private javax.swing.JTextField txtcedulaentrenadores;
+    private javax.swing.JTextField txtnombreentrenadores;
+    private javax.swing.JTextField txtsueldoentrenadores;
     // End of variables declaration//GEN-END:variables
 }

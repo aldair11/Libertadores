@@ -5,6 +5,11 @@
  */
 package View;
 
+import Model.Auxiliar;
+import java.util.ArrayList;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author aldai
@@ -14,8 +19,14 @@ public class frmAuxiliares extends javax.swing.JFrame {
     /**
      * Creates new form frmAuxiliares
      */
+    ArrayList<Auxiliar> auxiliares;
+
     public frmAuxiliares() {
+        this.auxiliares = new ArrayList<>();
         initComponents();
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
+        setIconImage(new ImageIcon(getClass().getResource("../Image/nantes.png")).getImage());
     }
 
     /**
@@ -27,24 +38,238 @@ public class frmAuxiliares extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jPanel1 = new javax.swing.JPanel();
+        lblcedulaauxiliares = new javax.swing.JLabel();
+        txtcedulaauxiliares = new javax.swing.JTextField();
+        lblnombreauxiliares = new javax.swing.JLabel();
+        txtnombreauxiliares = new javax.swing.JTextField();
+        lblapellidoauxiliares = new javax.swing.JLabel();
+        txtapellidoauxiliares = new javax.swing.JTextField();
+        lblsueldoauxiliares = new javax.swing.JLabel();
+        txtsueldoauxiliares = new javax.swing.JTextField();
+        lbllabor = new javax.swing.JLabel();
+        cmblabor = new javax.swing.JComboBox<>();
+        btnregistrarauxiliares = new javax.swing.JButton();
+        btnsalirauxiliares = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTAuxiliares = new javax.swing.JTable();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setTitle("Registro de Auxiliares");
+        setPreferredSize(new java.awt.Dimension(661, 465));
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos Basicos"));
+
+        lblcedulaauxiliares.setText("Cedula:");
+
+        lblnombreauxiliares.setText("Nombre:");
+
+        lblapellidoauxiliares.setText("Apellido:");
+
+        lblsueldoauxiliares.setText("Sueldo:");
+
+        lbllabor.setText("Labor:");
+
+        cmblabor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Utilero", "Masajista", "Médico" }));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lblcedulaauxiliares)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtcedulaauxiliares, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblsueldoauxiliares))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(txtsueldoauxiliares, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(69, 69, 69)
+                        .addComponent(lbllabor)
+                        .addGap(18, 18, 18)
+                        .addComponent(cmblabor, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(169, 169, 169))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(lblnombreauxiliares)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtnombreauxiliares, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(42, 42, 42)
+                        .addComponent(lblapellidoauxiliares)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtapellidoauxiliares, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(111, 111, 111))))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblcedulaauxiliares)
+                    .addComponent(txtcedulaauxiliares, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblnombreauxiliares)
+                    .addComponent(txtnombreauxiliares, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblapellidoauxiliares)
+                    .addComponent(txtapellidoauxiliares, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblsueldoauxiliares)
+                    .addComponent(txtsueldoauxiliares, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbllabor)
+                    .addComponent(cmblabor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23))
+        );
+
+        btnregistrarauxiliares.setText("REGISTRAR");
+        btnregistrarauxiliares.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnregistrarauxiliaresActionPerformed(evt);
+            }
+        });
+
+        btnsalirauxiliares.setText("SALIR");
+        btnsalirauxiliares.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsalirauxiliaresActionPerformed(evt);
+            }
+        });
+
+        jTAuxiliares.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Cedula", "Nombre", "Apellido", "Sueldo", "Labor"
+            }
+        ));
+        jScrollPane1.setViewportView(jTAuxiliares);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(207, 207, 207)
+                        .addComponent(btnregistrarauxiliares)
+                        .addGap(48, 48, 48)
+                        .addComponent(btnsalirauxiliares, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnregistrarauxiliares)
+                    .addComponent(btnsalirauxiliares))
+                .addGap(39, 39, 39)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(71, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-   
+    private void btnsalirauxiliaresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalirauxiliaresActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnsalirauxiliaresActionPerformed
+
+    private void btnregistrarauxiliaresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnregistrarauxiliaresActionPerformed
+        agregarAuxiliares();
+    }//GEN-LAST:event_btnregistrarauxiliaresActionPerformed
+    public void agregarAuxiliares() {
+
+        int id = 0;
+        double sueldo = 0;
+        String nombre = null;
+        String apellidos = null;
+        String labor = null;
+        Auxiliar auxi;
+        if (txtcedulaauxiliares.getText().equals("") || (txtnombreauxiliares.getText().equals("")) || (txtapellidoauxiliares.getText().equals("")) || (txtsueldoauxiliares.getText().equals(""))) {
+            JOptionPane.showMessageDialog(null, "Llene el campo vacio");
+        } else {
+            try {
+                id = Integer.parseInt(txtcedulaauxiliares.getText());
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Solo se aceptan datos numericos, verifique el campo Cedula");
+                return;
+            }
+            nombre = txtnombreauxiliares.getText();
+            apellidos = txtapellidoauxiliares.getText();
+            try {
+                sueldo = Double.parseDouble(txtsueldoauxiliares.getText());
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Solo se aceptan datos numericos, verifique el campo Sueldo");
+                return;
+            }
+            labor = (String) cmblabor.getSelectedItem();
+
+            Auxiliar aux = new Auxiliar(labor, id, nombre, apellidos, sueldo);
+            auxiliares.add(aux);
+
+            JOptionPane.showMessageDialog(null, "Datos Agregados Correctamente");
+            txtcedulaauxiliares.setText("");
+            txtnombreauxiliares.setText("");
+            txtapellidoauxiliares.setText("");
+            txtsueldoauxiliares.setText("");
+
+            mostrarAuxiliares();
+
+        }
+    }
+
+    public void mostrarAuxiliares() {
+        String matriz[][] = new String[auxiliares.size()][5];
+
+        for (int i = 0; i < auxiliares.size(); i++) {
+            matriz[i][0] = Integer.toString(auxiliares.get(i).getId());
+            matriz[i][1] = auxiliares.get(i).getNombre();
+            matriz[i][2] = auxiliares.get(i).getApellidos();
+            matriz[i][3] = Double.toString(auxiliares.get(i).getSueldo());
+            matriz[i][4] = auxiliares.get(i).getLabor();
+
+        }
+        jTAuxiliares.setModel(new javax.swing.table.DefaultTableModel(
+                matriz,
+                new String[]{
+                    "Cedula", "Nombre", "Apellido", "Sueldo", "Labor"
+                }
+        ));
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnregistrarauxiliares;
+    private javax.swing.JButton btnsalirauxiliares;
+    private javax.swing.JComboBox<String> cmblabor;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTAuxiliares;
+    private javax.swing.JLabel lblapellidoauxiliares;
+    private javax.swing.JLabel lblcedulaauxiliares;
+    private javax.swing.JLabel lbllabor;
+    private javax.swing.JLabel lblnombreauxiliares;
+    private javax.swing.JLabel lblsueldoauxiliares;
+    private javax.swing.JTextField txtapellidoauxiliares;
+    private javax.swing.JTextField txtcedulaauxiliares;
+    private javax.swing.JTextField txtnombreauxiliares;
+    private javax.swing.JTextField txtsueldoauxiliares;
     // End of variables declaration//GEN-END:variables
 }

@@ -73,10 +73,20 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         jmiEntrenadores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/entrenador.png"))); // NOI18N
         jmiEntrenadores.setText("Registrar Entrenadores");
+        jmiEntrenadores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiEntrenadoresActionPerformed(evt);
+            }
+        });
         jmplantilla.add(jmiEntrenadores);
 
         jmiAuxiliares.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/social-care.png"))); // NOI18N
         jmiAuxiliares.setText("Registrar Auxiliares");
+        jmiAuxiliares.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiAuxiliaresActionPerformed(evt);
+            }
+        });
         jmplantilla.add(jmiAuxiliares);
 
         jMenuBar2.add(jmplantilla);
@@ -126,6 +136,16 @@ public class frmPrincipal extends javax.swing.JFrame {
        frmJugadores jug = new frmJugadores();
        jug.setVisible(true);
     }//GEN-LAST:event_jmiJugadoresActionPerformed
+
+    private void jmiEntrenadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiEntrenadoresActionPerformed
+        frmEntrenadores ent = new frmEntrenadores();
+        ent.setVisible(true);
+    }//GEN-LAST:event_jmiEntrenadoresActionPerformed
+
+    private void jmiAuxiliaresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAuxiliaresActionPerformed
+       frmAuxiliares au = new frmAuxiliares();
+       au.setVisible(true);
+    }//GEN-LAST:event_jmiAuxiliaresActionPerformed
 
     /**
      * @param args the command line arguments
