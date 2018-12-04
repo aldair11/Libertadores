@@ -13,6 +13,8 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -246,7 +248,6 @@ public class frmJugadores extends javax.swing.JFrame {
         agregar();
     }//GEN-LAST:event_btnregistrarjugadoresActionPerformed
     public void agregar() {
-
         int id = 0;
         double sueldo = 0;
         double peso = 0;
@@ -261,9 +262,11 @@ public class frmJugadores extends javax.swing.JFrame {
             try {
                 id = Integer.parseInt(txtcedulajugadores.getText());
             } catch (Exception e) {
+                
                 JOptionPane.showMessageDialog(null, "Solo se aceptan datos numericos, verifique el campo Cedula");
                 return;
             }
+            
             nombre = txtnombrejugadores.getText();
             apellidos = txtapellidojugadores.getText();
             try {
@@ -286,6 +289,7 @@ public class frmJugadores extends javax.swing.JFrame {
                 return;
             }
             Jugador jug = new Jugador(pocision, estatura, peso, id, nombre, apellidos, sueldo);
+            
             jugadores.add(jug);
 
             JOptionPane.showMessageDialog(null, "Datos Agregados Correctamente");
@@ -322,6 +326,7 @@ public class frmJugadores extends javax.swing.JFrame {
                 }
         ));
     }
+    
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

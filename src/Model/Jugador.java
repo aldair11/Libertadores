@@ -5,6 +5,8 @@ public class Jugador extends Persona{
     private String pocision;
     private double estatura;
     private double peso;
+ 
+  
 
     public Jugador(String pocision, double estatura, double peso, int id, String nombre, String apellidos, double sueldo) {
         super(id, nombre, apellidos, sueldo);
@@ -36,5 +38,6 @@ public class Jugador extends Persona{
     public void setPeso(double peso) {
         this.peso = peso;
     }
+   
    
 }

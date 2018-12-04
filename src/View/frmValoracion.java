@@ -1,6 +1,8 @@
 
 package View;
 
+import Model.Jugador;
+import Model.Persona;
 import Model.Valoracion;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -8,6 +10,7 @@ import java.util.Calendar;
 import java.util.Date;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import java.util.List;
 
 /**
  *
@@ -207,6 +210,7 @@ public class frmValoracion extends javax.swing.JFrame {
     }//GEN-LAST:event_txtfechaActionPerformed
 
     private void btnregistrarvaloracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnregistrarvaloracionActionPerformed
+     
         agregarValoracion();
     }//GEN-LAST:event_btnregistrarvaloracionActionPerformed
 
@@ -264,6 +268,10 @@ public class frmValoracion extends javax.swing.JFrame {
                 }
         ));
     }
+    
+    
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnregistrarvaloracion;

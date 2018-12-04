@@ -1,11 +1,15 @@
 
 package Model;
 
+import Model.Jugador;
+import java.util.ArrayList;
+
 public class Persona {
     protected int id;
     protected String nombre;
     protected String apellidos;
     protected double sueldo;
+     
 
     public Persona(int id, String nombre, String apellidos, double sueldo) {
         this.id = id;
@@ -46,6 +50,7 @@ public class Persona {
         this.sueldo = sueldo;
     }
     
+    }
+
     
-    
-}
+

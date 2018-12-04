@@ -141,7 +141,7 @@ public class frmPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jmiSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiSalirActionPerformed
-        this.dispose();
+        System.exit(0); 
     }//GEN-LAST:event_jmiSalirActionPerformed
 
     private void jmiJugadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiJugadoresActionPerformed
