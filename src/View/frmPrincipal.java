@@ -62,7 +62,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         jMenu2.setText("Edit");
         jMenuBar1.add(jMenu2);
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Equipo Libertadores");
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/estadio.jpg"))); // NOI18N

@@ -18,10 +18,12 @@ import java.util.Set;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
+
 /**
  *
  * @author aldai
  */
+import java.awt.event.KeyEvent;
 public class frmJugadores extends javax.swing.JFrame {
 
     /**
@@ -260,7 +262,8 @@ public class frmJugadores extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Llene el campo vacio");
         } else {
             try {
-                id = Integer.parseInt(txtcedulajugadores.getText());
+               
+                    id = Integer.parseInt(txtcedulajugadores.getText());
             } catch (Exception e) {
                 
                 JOptionPane.showMessageDialog(null, "Solo se aceptan datos numericos, verifique el campo Cedula");
@@ -306,6 +309,14 @@ public class frmJugadores extends javax.swing.JFrame {
         }
 
     }
+    
+    public void keyTyped(KeyEvent e) 
+
+    {
+    if (txtcedulajugadores.getText().length()== 15) 
+
+         e.consume(); 
+    } 
 
     public void mostrar() {
         String matriz[][] = new String[jugadores.size()][7];
